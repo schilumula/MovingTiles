@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-grid-list [cols]="noOfCols" rowHeight="2:1" [gutterSize]="1">
+    <div *ngFor="let tile of images; let i = index" [@animateTile]="tile.state">
+      <mat-grid-tile   
+      [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="getBgColor(i)" 
+      (click)="onTileClick(i)" >
+        <div [style.background-image]="'url(' + tile.src + ')'"></div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
